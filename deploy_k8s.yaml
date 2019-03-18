@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    provider: deployment-controller
+  name: telegram_bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: telegram
+  template:
+    metadata:
+      labels:
+        service: telegram
+    spec:
+      containers:
+      - env:
+        - name: consumer_secret
+          value: xxxxx
+        - name: access_token_key
+          value: xxxxx
+        - name: access_token_secret
+          value: xxxx
+        - name: consumer_key
+          value: xxxx
+        - name: twitter_user
+          value: xxxx
+        - name: telegram_token
+          value: xxx
+        name: telegram
+        image: mykaua/telegram_bot
+        imagePullPolicy: Always
