@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 twitter_user = twitter_tokens.twitter_user
 telegram_token = twitter_tokens.telegram_token
-INTERVAL = 60
+INTERVAL = 1800
 
 api = twitter.Api(twitter_tokens.consumer_key,
                   twitter_tokens.consumer_secret,
