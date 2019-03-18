@@ -6,10 +6,11 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 INTERVAL = 60 #15 mins
-TOKEN = 'xxxx'
+TOKEN = 'token'
 
 def message_to_telegram(bot, job):
-    bot.sendMessage(chat_id=job.context, text='https://t.co/WHkDi91Fti')
+    test = 'https://t.co/WHkDi91Fti'
+    bot.sendMessage(chat_id=job.context, text=test, disable_notification=True)
 
 #-------------------------------------
 def start(bot, update, job_queue):
